@@ -8,9 +8,12 @@ import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/regular";
 import "@fortawesome/fontawesome-free/js/brands";
 import * as basicLightbox from "basiclightbox";
+import shoppingCart from "./js/shoppingCart";
 
 const productsContainer = document.querySelector("#products-container");
 productsContainer.insertAdjacentHTML("beforeend", productsTemplate(products));
+
+const cart = new shoppingCart(products);
 
 // const renderProducts = (products) => {
 //   const html = products.reduce(
@@ -67,6 +70,7 @@ menuBtn.addEventListener("click", () => {
 //open modal-window
 document.querySelectorAll(".open-modal").forEach((elem) => {
   elem.addEventListener("click", (event) => {
+    cart.renderProducts();
     document
       .querySelector(`#${event.currentTarget.dataset.modal}`)
       .classList.remove("is-hidden");
@@ -83,29 +87,30 @@ document.querySelectorAll(".modal-overlay, .modal-close").forEach((elem) => {
 });
 
 // add to basket
-const shoppingCart = {
-  data: {
-    products: [],
-  },
-  addToBasket(product_id) {
-    let selectedProduct = products.find((product) => {
-      return product.id === product_id;
-    });
-    let newProduct = {
-      id: selectedProduct.id,
-      title: selectedProduct.title,
-      price: selectedProduct.price,
-      quantity: 1,
-    };
-    this.data.products.push(newProduct);
-    console.log(this.data.products);
-  },
-};
+
+// const shoppingCart2 = {
+//   data: {
+//     products: [],
+//   },
+//   addToBasket(product_id) {
+//     let selectedProduct = products.find((product) => {
+//       return product.id === product_id;
+//     });
+//     let newProduct = {
+//       id: selectedProduct.id,
+//       title: selectedProduct.title,
+//       price: selectedProduct.price,
+//       quantity: 1,
+//     };
+//     this.data.products.push(newProduct);
+//     console.log(this.data.products);
+//   },
+// };
 
 document.querySelectorAll(".buttonBuy").forEach((btn) => {
   btn.addEventListener("click", (event) => {
     let productId = Number(event.currentTarget.dataset.productId);
-    shoppingCart.addToBasket(productId);
+    cart.addToBasket(productId);
   });
 });
 
