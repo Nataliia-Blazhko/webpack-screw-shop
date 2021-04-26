@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <title>Document</title>
+
+</head>
+<body>
+  <header>
+    <button type="button" class="btn" id="menu-button"> <i class="fas fa-bars"></i></button>
+    <button type="button" class="btn open-modal" id="basket-button" data-modal="modal-basket"><i class="fas fa-shopping-cart"></i></button>
+    
+  </header>
+  <aside class="sidebar">
+    <ul class="sidebar-links">
+      <li class="sidebar-item"><a href="">Company</a></li>
+      <li class="sidebar-item"><a href="">Products</a></li>
+      <li class="sidebar-item"><a href="">Catalogue</a></li>
+      <li class="sidebar-item"><a href="">Contacts</a></li>
+    </ul>
+  </aside>
+  <div class="container">
+    <div id="products-container"></div>
+  </div>
+  <div class="modal is-hidden" id="modal-basket"> 
+    <div class="modal-overlay" data-for="modal-basket"></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-for="modal-basket"><i class="fas fa-times"></i></button>
+      <h3>Корзина</h3>
+    </div>
+  </div>
+
+</body>
+</html>

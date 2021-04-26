@@ -1,0 +1,31 @@
+@import "./fonts";
+@import "./vars";
+@import "./header";
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $robotoRegular;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#products-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+}
+
+@import "./sidebar";
+@import "./modal";
+@import "./product";
+@import "./lightbox";

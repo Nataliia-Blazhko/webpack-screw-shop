@@ -1,0 +1,23 @@
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 40px);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  background-color: lightpink;
+}
+
+.sidebar-item {
+  margin-bottom: 20px;
+  &:hover {
+    color: purple;
+    font-size: 25px;
+    transition: 250ms linear;
+  }
+}
+
+.sidebar-links {
+  padding: 25px;
+  list-style: none;
+  font-size: 20px;
+}
